@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💱 Currency Converter</h1>
+            <p>Convert currencies with real-time exchange rates</p>
+        </div>
+
+        <form class="converter-form" id="converterForm">
+            <div class="input-group">
+                <label for="fromAmount">From</label>
+                <div class="currency-input">
+                    <input 
+                        type="number" 
+                        id="fromAmount" 
+                        class="amount-input" 
+                        placeholder="Enter amount" 
+                        value="1"
+                        min="0"
+                        step="0.01"
+                    >
+                    <select id="fromCurrency" class="currency-select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" class="swap-button" id="swapButton" title="Swap currencies">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/>
+                </svg>
+            </button>
+
+            <div class="input-group">
+                <label for="toAmount">To</label>
+                <div class="currency-input">
+                    <input 
+                        type="number" 
+                        id="toAmount" 
+                        class="amount-input" 
+                        placeholder="Converted amount"
+                        readonly
+                    >
+                    <select id="toCurrency" class="currency-select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="convert-button" id="convertButton">
+                Convert Currency
+            </button>
+
+            <div class="loading" id="loading">
+                Converting... Please wait
+            </div>
+
+            <div class="error" id="error"></div>
+
+            <div class="exchange-rate" id="exchangeRate"></div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="copyright">&copy; 2025 Currency Converter. All rights reserved. </div>
+        <div class="made-by">Made with ❤️ by Tushar Dharmik</div>
+    </footer>
+
+    <script src="countries.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.currency-input {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.amount-input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.amount-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.currency-select {
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.currency-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.currency-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+
+.swap-button {
+    align-self: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.swap-button:hover {
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.swap-button svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+.result {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #e1e8ed;
+    margin-top: 10px;
+}
+
+.result-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.result-text {
+    color: #666;
+    font-size: 1rem;
+}
+
+.convert-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.convert-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.convert-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.error {
+    background: #fee;
+    color: #c53030;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #fed7d7;
+    display: none;
+}
+
+.exchange-rate {
+    text-align: center;
+    color: #666;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 400;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .currency-input {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .amount-input,
+    .currency-select {
+        width: 100%;
+    }
+
+    .result-amount {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .result-amount {
+        font-size: 1.3rem;
+    }
+}
