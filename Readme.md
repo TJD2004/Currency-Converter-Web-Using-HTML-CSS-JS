@@ -41,15 +41,15 @@ Currency_Converter_Web/
 
 ## 🔧 How to Use
 
-# 1. Clone the repository:
+ 1. Clone the repository:
 ```bash
    git clone https://github.com/TJD2004/Currency-Converter-Using-HTML-CSS- JS.git
 
 ```
 
-# 2. Open index.html in your browser.
+ 2. Open index.html in your browser.
 
-# 3. Select currencies, enter an amount, and see the converted value.
+ 3. Select currencies, enter an amount, and see the converted value.
 
 ---
 
